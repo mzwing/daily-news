@@ -1,11 +1,18 @@
-import { data } from "./fetch_news.mjs";
+import { newsList } from "./news_list.mjs";
+import { fetchNewsContent } from "./news_content.mjs";
+
+const injectNewsContent = async () => {
+  let _data = await fetchNewsContent();
+};
 
 let content = ``;
 
-for(let i = 0; i < data.stories.length; i++) {
+for(let i = 0; i < newsList.stories.length; i++) {
   content += `
-    <p><a href="${data.stories[i].url}" target="_blank">${data.stories[i].title}</a> <i><img src="${data.stories[i].images[0]}"/>${data.stories[i].hint}</i></p>
+    <p><i class="read_article">${newsList.stories[i].title}</i> <a href="${newsList.stories[i].url}" target="_blank">阅读原文</a> <i><img src="${newsList.stories[i].images[0]}"/>${newsList.stories[i].hint}</i></p>
   `;
 };
+
+document.querySelector(".read_article").onclick = injectNewsContent;
 
 document.querySelector('#app').innerHTML = content;

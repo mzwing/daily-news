@@ -1,3 +1,6 @@
+export const config = {
+  runtime: "experimental-edge",
+};
 export default async (req, res) => {
   let response = await fetch("https://news-at.zhihu.com/api/4/news/latest");
   let data = await response.json();
