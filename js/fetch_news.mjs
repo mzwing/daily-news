@@ -9,10 +9,14 @@ const _getYYYYMMDD = () => {
   return YYYYMMDD;
 };
 
-let _res = await fetch("./api/");
-let data = await _res.json();
+const fetchNews = async () => {
+  let _res = await fetch("./api/");
+  let data = await _res.json();
 
-// verify the date of news
-Number(data.date) < _getYYYYMMDD() ? (data = await (await fetch("./api/?_vercel_no_cache=1")).json()) : data;
+  // verify the date of news
+  Number(data.date) < _getYYYYMMDD() ? (data = await (await fetch("./api/?_vercel_no_cache=1")).json()) : data;
 
-export { data }
+  return data;
+};
+
+export const data = fetchNews();
