@@ -23,7 +23,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "vercel --prod",
+    "deploy": "vite build && nitro deploy",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
@@ -32,8 +32,8 @@
   ],
   "devDependencies": {
     "eslint": "^8.46.0",
-    "vercel": "^31.2.1",
-    "vite": "^4.4.8"
+    "vite": "^4.4.8",
+    "nitro": "^0.1.0"
   },
   "bugs": {
     "url": "https://github.com/mzwing/daily-news/issues"
