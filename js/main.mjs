@@ -1,11 +1,12 @@
-import { data } from "./fetch_news.mjs";
+import { fetchNews } from "./fetch_news.mjs";
 
-let content = ``;
+async function renderNews() {
+  const data = await fetchNews();
+  const content = data.stories.map(story => `
+    <p><a href="${story.url}" target="_blank">${story.title}</a> <i><img src="${story.images[0]}"/>${story.hint}</i></p>
+  `).join('');
 
-for(let i = 0; i < data.stories.length; i++) {
-  content += `
-    <p><a href="${data.stories[i].url}" target="_blank">${data.stories[i].title}</a> <i><img src="${data.stories[i].images[0]}"/>${data.stories[i].hint}</i></p>
-  `;
-};
+  document.querySelector('#app').innerHTML = content;
+}
 
-document.querySelector('#app').innerHTML = content;
+renderNews();
