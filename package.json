@@ -33,7 +33,7 @@
   "devDependencies": {
     "eslint": "^8.46.0",
     "vercel": "^27.1.0",
-    "vite": "^2.9.16"
+    "vite": "^4.4.8"
   },
   "bugs": {
     "url": "https://github.com/mzwing/daily-news/issues"
