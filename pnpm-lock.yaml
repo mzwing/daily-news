@@ -12,8 +12,8 @@ devDependencies:
     specifier: ^27.1.0
     version: 27.1.0
   vite:
-    specifier: ^2.9.9
-    version: 2.9.14
+    specifier: ^2.9.16
+    version: 2.9.16
 
 packages:
 
@@ -2142,8 +2142,8 @@ packages:
       - supports-color
     dev: true
 
-  /vite@2.9.14:
-    resolution: {integrity: sha512-P/UCjSpSMcE54r4mPak55hWAZPlyfS369svib/gpmz8/01L822lMPOJ/RYW6tLCe1RPvMvOsJ17erf55bKp4Hw==}
+  /vite@2.9.16:
+    resolution: {integrity: sha512-X+6q8KPyeuBvTQV8AVSnKDvXoBMnTx8zxh54sOwmmuOdxkjMmEJXH2UEchA+vTMps1xw9vL64uwJOWryULg7nA==}
     engines: {node: '>=12.2.0'}
     hasBin: true
     peerDependencies:
